@@ -1,0 +1,54 @@
+name: MegaTools
+main: org.darksoft.minecraft.megatools.MegaTools
+version: 1.0b
+
+commands:
+  megasword:
+    description: Get a powerful sword
+    usage: /<command> [player] [fire|nofire]
+    permission: megatools.megasword
+    permission-message: You don't have permission to execute this command
+  megaaxe:
+    description: Get a powerful axe
+    usage: /<command> [player] [fortune|silk]
+    permission: megatools.megaaxe
+  megapickaxe:
+    description: Get a powerful pickaxe
+    usage: /<command> [player] [fortune|silk]
+    permission: megatools.megapickaxe
+  megashovel:
+    description: Get a powerful shovel
+    usage: /<command> [player] [fortune|silk]
+    permission: megatools.megashovel
+  megabow:
+    description: Get a powerful bow
+    usage: /<command> [player] [fire|nofire]
+    permission: megatools.megabow
+  megaarmor:
+    description: Get a mega armor set
+    usage: /<command> [player]
+    permission: megatools.megaarmor
+        
+permission:
+  megatools.*:
+    description: Gives access all MegaTools commands.
+    children:
+      megatools.megasword: true
+      megatools.megaaxe: true
+      megatools.megapickaxe: true
+      megatools.megashovel: true
+  megatools.megasword:
+    description: Allow give a enchanted sword to Player
+    default: op
+  megatools.megaaxe:
+    description: Allow give a enchanted axe to Player
+    default: op
+  megatools.megapickaxe:
+    description: Allow give a enchanted pickaxe to Player
+    default: op
+  megatools.megashovel:
+    description: Allow give a enchanted shovel to Player
+    default: op
+  megatools.megaarmor:
+    description: Allow give a enchanted armor set to Player
+    default: op

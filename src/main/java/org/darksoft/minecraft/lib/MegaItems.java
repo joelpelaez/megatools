@@ -1,4 +1,4 @@
-package org.darksoft.minecraft.megatools;
+package org.darksoft.minecraft.lib;
 
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
  * @since 1.1b
  * @version 1.1b
  */
-public class Tools {
+public class MegaItems {
 	/**
 	 * Set to <code>item</code> a <code>enchantment</code> with the max level
 	 * 

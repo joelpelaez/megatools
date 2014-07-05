@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+import org.darksoft.minecraft.lib.MegaItems;
 
 public class MegaToolsCommandExecutor implements CommandExecutor {
 
@@ -85,7 +86,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			}
 		}
 		PlayerInventory inventory = target.getInventory();
-		ItemStack sword = Tools.getMegaSword(fire);
+		ItemStack sword = MegaItems.getMegaSword(fire);
 		inventory.addItem(sword);
 		target.sendMessage(tl("powerfulSword"));
 		return true;
@@ -112,7 +113,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack axe = Tools.getMegaAxe(fortune);
+		ItemStack axe = MegaItems.getMegaAxe(fortune);
 		inventory.addItem(axe);
 		target.sendMessage(tl("powerfulAxe"));
 		return true;
@@ -139,7 +140,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack pickaxe = Tools.getMegaPickaxe(fortune);
+		ItemStack pickaxe = MegaItems.getMegaPickaxe(fortune);
 		inventory.addItem(pickaxe);
 		target.sendMessage(tl("powerfulPickaxe"));
 		return true;
@@ -165,7 +166,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack shovel = Tools.getMegaShovel(fortune);
+		ItemStack shovel = MegaItems.getMegaShovel(fortune);
 		inventory.addItem(shovel);
 		target.sendMessage(tl("powerfulShovel"));
 		return true;
@@ -191,7 +192,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack bow = Tools.getMegaBow(fire);
+		ItemStack bow = MegaItems.getMegaBow(fire);
 		inventory.addItem(bow);
 		ItemStack arrow = new ItemStack(Material.ARROW);
 		if (!(inventory.contains(arrow)))
@@ -207,7 +208,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			return false;
 		}
 		PlayerInventory inventory = target.getInventory();
-		ItemStack fns = Tools.getMegaFlintAndSteel();
+		ItemStack fns = MegaItems.getMegaFlintAndSteel();
 		inventory.addItem(fns);
 		target.sendMessage(tl("powerfulFnS"));
 		return false;
@@ -220,7 +221,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			return false;
 		}
 		PlayerInventory inventory = target.getInventory();
-		ItemStack shears = Tools.getMegaShears();
+		ItemStack shears = MegaItems.getMegaShears();
 		inventory.addItem(shears);
 		target.sendMessage(tl("powerfulShears"));
 		return true;
@@ -233,10 +234,10 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			return false;
 		}
 		PlayerInventory inventory = target.getInventory();
-		inventory.setHelmet(Tools.getMegaHelmet());
-		inventory.setChestplate(Tools.getMegaChestplate());
-		inventory.setLeggings(Tools.getMegaLeggings());
-		inventory.setBoots(Tools.getMegaBoots());
+		inventory.setHelmet(MegaItems.getMegaHelmet());
+		inventory.setChestplate(MegaItems.getMegaChestplate());
+		inventory.setLeggings(MegaItems.getMegaLeggings());
+		inventory.setBoots(MegaItems.getMegaBoots());
 		target.sendMessage(tl("powerfulArmor"));
 		return true;
 	}

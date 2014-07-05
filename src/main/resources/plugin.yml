@@ -24,6 +24,14 @@ commands:
     description: Get a powerful bow
     usage: /<command> [player] [fire|nofire]
     permission: megatools.megabow
+  megafns:
+    description: Get a flint and steel
+    usage: /<command> [player]
+    permission: megatools.megafns
+  megashears:
+    description: Get a shears
+    usage: /<command> [player]
+    permission: megatools.megashears
   megaarmor:
     description: Get a mega armor set
     usage: /<command> [player]
@@ -48,6 +56,12 @@ permission:
     default: op
   megatools.megashovel:
     description: Allow give a enchanted shovel to Player
+    default: op
+  megatools.megafns:
+    description: Allow give a enchanted flint and steel to Player
+    default: op
+  megatools.megashears:
+    description: Allow give a enchanted shears to Player
     default: op
   megatools.megaarmor:
     description: Allow give a enchanted armor set to Player

@@ -1,5 +1,7 @@
 package org.darksoft.minecraft.megatools;
 
+import static org.darksoft.minecraft.megatools.I18n.tl;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -18,7 +20,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		Player target = null;
 
 		if (args.length < 1) {
-			sender.sendMessage("Not enough arguments!");
+			sender.sendMessage(tl("enoughArguments"));
 			return false;
 		}
 
@@ -31,7 +33,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		} else {
 			target = (Bukkit.getServer().getPlayer(args[0]));
 			if (target == null) {
-				sender.sendMessage(args[0] + " is not online!");
+				sender.sendMessage(tl("playerNoOnline", args[0]));
 				return false;
 			}
 		}
@@ -51,6 +53,12 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		else if (cmd.getName().equalsIgnoreCase("megabow"))
 			return commandMegaBow(target, sender, label, args);
 
+		else if (cmd.getName().equalsIgnoreCase("megafns"))
+			return commandMegaFlintAndSteel(target, sender, label, args);
+
+		else if (cmd.getName().equalsIgnoreCase("megashears"))
+			return commandMegaShears(target, sender, label, args);
+
 		else if (cmd.getName().equalsIgnoreCase("megaarmor"))
 			return commandMegaArmor(target, sender, label, args);
 
@@ -62,7 +70,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		boolean fire = true;
 
 		if (args.length > 2) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 
@@ -72,14 +80,14 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			else if (args[1].equals("nofire"))
 				fire = false;
 			else {
-				sender.sendMessage("Bad argument: Use fire or nofire");
+				sender.sendMessage(tl("badArgumentN"));
 				return false;
 			}
 		}
 		PlayerInventory inventory = target.getInventory();
-		ItemStack sword = MegaTools.getMegaSword(fire);
+		ItemStack sword = Tools.getMegaSword(fire);
 		inventory.addItem(sword);
-		target.sendMessage("You get a powerful sword!");
+		target.sendMessage(tl("powerfulSword"));
 		return true;
 	}
 
@@ -88,7 +96,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		boolean fortune = true;
 
 		if (args.length > 2) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 
@@ -98,15 +106,15 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			else if (args[1].equals("silk"))
 				fortune = false;
 			else {
-				sender.sendMessage("Bad argument: Use fortune or silk");
+				sender.sendMessage(tl("badArgumentF"));
 				return false;
 			}
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack axe = MegaTools.getMegaAxe(fortune);
+		ItemStack axe = Tools.getMegaAxe(fortune);
 		inventory.addItem(axe);
-		target.sendMessage("You get a powerful axe!");
+		target.sendMessage(tl("powerfulAxe"));
 		return true;
 	}
 
@@ -115,7 +123,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		boolean fortune = true;
 
 		if (args.length > 2) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 
@@ -125,15 +133,15 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			else if (args[1].equals("silk"))
 				fortune = false;
 			else {
-				sender.sendMessage("Bad argument: Use fortune or silk");
+				sender.sendMessage(tl("badArgumentF"));
 				return false;
 			}
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack pickaxe = MegaTools.getMegaPickaxe(fortune);
+		ItemStack pickaxe = Tools.getMegaPickaxe(fortune);
 		inventory.addItem(pickaxe);
-		target.sendMessage("You get a powerful axe!");
+		target.sendMessage(tl("powerfulPickaxe"));
 		return true;
 	}
 
@@ -142,7 +150,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		boolean fortune = true;
 
 		if (args.length > 2) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 		if (args.length == 2) {
@@ -151,15 +159,15 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			else if (args[1].equals("silk"))
 				fortune = false;
 			else {
-				sender.sendMessage("Bad argument: Use fortune or silk");
+				sender.sendMessage(tl("badArgumentF"));
 				return false;
 			}
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack shovel = MegaTools.getMegaShovel(fortune);
+		ItemStack shovel = Tools.getMegaShovel(fortune);
 		inventory.addItem(shovel);
-		target.sendMessage("You get a powerful axe!");
+		target.sendMessage(tl("powerfulShovel"));
 		return true;
 	}
 
@@ -168,7 +176,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		boolean fire = true;
 
 		if (args.length > 2) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 		if (args.length == 2) {
@@ -177,19 +185,45 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			else if (args[1].equals("nofire"))
 				fire = false;
 			else {
-				sender.sendMessage("Bad argument: Use fire or nofire");
+				sender.sendMessage(tl("badArgumentN"));
 				return false;
 			}
 		}
 
 		PlayerInventory inventory = target.getInventory();
-		ItemStack bow = MegaTools.getMegaBow(fire);
+		ItemStack bow = Tools.getMegaBow(fire);
 		inventory.addItem(bow);
 		ItemStack arrow = new ItemStack(Material.ARROW);
 		if (!(inventory.contains(arrow)))
 			inventory.addItem(arrow);
 		target.sendMessage("You get a powerful axe!");
 		return true;
+	}
+
+	private boolean commandMegaFlintAndSteel(Player target,
+			CommandSender sender, String label, String[] args) {
+		if (args.length > 1) {
+			sender.sendMessage(tl("tooArguments"));
+			return false;
+		}
+		PlayerInventory inventory = target.getInventory();
+		ItemStack fns = Tools.getMegaFlintAndSteel();
+		inventory.addItem(fns);
+		target.sendMessage(tl("powerfulFnS"));
+		return false;
+	}
+
+	private boolean commandMegaShears(Player target, CommandSender sender,
+			String label, String[] args) {
+		if (args.length > 1) {
+			sender.sendMessage(tl("tooArguments"));
+			return false;
+		}
+		PlayerInventory inventory = target.getInventory();
+		ItemStack shears = Tools.getMegaShears();
+		inventory.addItem(shears);
+		target.sendMessage(tl("powerfulShears"));
+		return false;
 	}
 
 	private boolean commandMegaArmor(Player target, CommandSender sender,
@@ -199,10 +233,11 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 			return false;
 		}
 		PlayerInventory inventory = target.getInventory();
-		inventory.setHelmet(MegaTools.getMegaHelmet());
-		inventory.setChestplate(MegaTools.getMegaChestplate());
-		inventory.setLeggings(MegaTools.getMegaLeggings());
-		inventory.setBoots(MegaTools.getMegaBoots());
+		inventory.setHelmet(Tools.getMegaHelmet());
+		inventory.setChestplate(Tools.getMegaChestplate());
+		inventory.setLeggings(Tools.getMegaLeggings());
+		inventory.setBoots(Tools.getMegaBoots());
 		return true;
 	}
+
 }

@@ -3,7 +3,6 @@ package org.darksoft.minecraft.megatools;
 import java.util.Locale;
 import java.util.logging.Logger;
 
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -40,7 +39,7 @@ public class MegaTools extends JavaPlugin {
 		getCommand("megashears").setExecutor(mExecutor);
 		getCommand("megaarmor").setExecutor(mExecutor);
 
-		getLogger().info(ChatColor.AQUA + "Enabled MegeTools Beta");
+		getLogger().info("Enabled MegeTools Beta");
 	}
 
 	@Override

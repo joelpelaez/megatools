@@ -223,13 +223,13 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		ItemStack shears = Tools.getMegaShears();
 		inventory.addItem(shears);
 		target.sendMessage(tl("powerfulShears"));
-		return false;
+		return true;
 	}
 
 	private boolean commandMegaArmor(Player target, CommandSender sender,
 			String label, String[] args) {
 		if (args.length > 1) {
-			sender.sendMessage("Too many arguments!");
+			sender.sendMessage(tl("tooArguments"));
 			return false;
 		}
 		PlayerInventory inventory = target.getInventory();
@@ -237,6 +237,7 @@ public class MegaToolsCommandExecutor implements CommandExecutor {
 		inventory.setChestplate(Tools.getMegaChestplate());
 		inventory.setLeggings(Tools.getMegaLeggings());
 		inventory.setBoots(Tools.getMegaBoots());
+		target.sendMessage(tl("powerfulArmor"));
 		return true;
 	}
 

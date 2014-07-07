@@ -7,11 +7,12 @@ commands:
     description: Get a powerful sword
     usage: /<command> [player] [fire|nofire]
     permission: megatools.megasword
-    permission-message: You don't have permission to execute this command
+    permission-message: '&cYou don't have permission to use this command'
   megaaxe:
     description: Get a powerful axe
     usage: /<command> [player] [fortune|silk]
     permission: megatools.megaaxe
+    permission-message: '&cYou don't have permission to use this command'
   megapickaxe:
     description: Get a powerful pickaxe
     usage: /<command> [player] [fortune|silk]
@@ -37,7 +38,7 @@ commands:
     usage: /<command> [player]
     permission: megatools.megaarmor
         
-permission:
+permissions:
   megatools.*:
     description: Gives access all MegaTools commands.
     children:
@@ -45,6 +46,9 @@ permission:
       megatools.megaaxe: true
       megatools.megapickaxe: true
       megatools.megashovel: true
+      megatools.megaarmor: true
+      megatools.megafns: true
+      megatools.megashears: true
   megatools.megasword:
     description: Allow give a enchanted sword to Player
     default: op

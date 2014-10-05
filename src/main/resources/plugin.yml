@@ -7,36 +7,42 @@ commands:
     description: Get a powerful sword
     usage: /<command> [player] [fire|nofire]
     permission: megatools.megasword
-    permission-message: '&cYou don't have permission to use this command'
+    permission-message: "&cYou don't have permission to use this command"
   megaaxe:
     description: Get a powerful axe
     usage: /<command> [player] [fortune|silk]
     permission: megatools.megaaxe
-    permission-message: '&cYou don't have permission to use this command'
+    permission-message: "&cYou don't have permission to use this command"
   megapickaxe:
     description: Get a powerful pickaxe
     usage: /<command> [player] [fortune|silk]
     permission: megatools.megapickaxe
+    permission-message: "&cYou don't have permission to use this command"
   megashovel:
     description: Get a powerful shovel
     usage: /<command> [player] [fortune|silk]
     permission: megatools.megashovel
+    permission-message: "&cYou don't have permission to use this command"
   megabow:
     description: Get a powerful bow
     usage: /<command> [player] [fire|nofire]
     permission: megatools.megabow
+    permission-message: "&cYou don't have permission to use this command"
   megafns:
     description: Get a flint and steel
     usage: /<command> [player]
     permission: megatools.megafns
+    permission-message: "&cYou don't have permission to use this command"
   megashears:
     description: Get a shears
     usage: /<command> [player]
     permission: megatools.megashears
+    permission-message: "&cYou don't have permission to use this command"
   megaarmor:
     description: Get a mega armor set
     usage: /<command> [player]
     permission: megatools.megaarmor
+    permission-message: "&cYou don't have permission to use this command"
         
 permissions:
   megatools.*:
